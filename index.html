@@ -61,7 +61,9 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="button" type="button">Order Service</button>
+          <button class="button" type="button" data-open-modal>
+            Order Service
+          </button>
         </div>
       </section>
 
@@ -520,5 +522,36 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-backdrop>
+      <div class="modal">
+        <button class="cross" data-close-modal>
+          <svg class="vector">
+            <use href="./images/icons.svg#icon_vector"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector("[data-open-modal]"),
+        closeModalBtn: document.querySelector("[data-close-modal]"),
+        backdrop: document.querySelector("[data-backdrop]"),
+      };
+
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+
+      refs.backdrop.addEventListener("click", logBackdropClick);
+
+      function toggleModal() {
+        refs.backdrop.classList.toggle("is-hidden");
+      }
+
+      function logBackdropClick() {
+        console.log("Это клик в бэкдроп");
+      }
+    </script>
   </body>
 </html>
