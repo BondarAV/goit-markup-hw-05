@@ -433,8 +433,35 @@ body{
     border-color: transparent;
 }
 
-.nav-list .current {
-    color: var(--dark-accent-color);
+.nav-list .index-current,
+.nav-list .portfolio-current {
+    position: relative;
+}
+
+.nav-list .index-current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    width: 48px;
+    height: 4px;
+
+    border-radius: 2px;
+    background-color: var(--dark-accent-color);
+}
+
+.nav-list .portfolio-current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 66px;
+    height: 4px;
+
+    border-radius: 2px;
+    background-color: var(--dark-accent-color);
 }
 
 /* HW-03 markup */
