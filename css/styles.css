@@ -436,6 +436,7 @@ body{
 .nav-list .index-current,
 .nav-list .portfolio-current {
     position: relative;
+    color: var(--dark-accent-color);
 }
 
 .nav-list .index-current::after {
